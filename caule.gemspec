@@ -4,9 +4,9 @@ require File.expand_path('../lib/caule/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Rafael Souza"]
   gem.email         = ["me@rafaelss.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{DSL to build crawlers easily}
+  gem.summary       = %q{DSL to build crawlers easily}
+  gem.homepage      = "http://github.com/rafaelss/caule"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
