@@ -4,8 +4,8 @@ require File.expand_path('../lib/caule/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Rafael Souza"]
   gem.email         = ["me@rafaelss.com"]
-  gem.description   = %q{DSL to build crawlers easily}
-  gem.summary       = %q{DSL to build crawlers easily}
+  gem.description   = %q{A DSL to build web crawlers easily with Mechanize}
+  gem.summary       = %q{A DSL to build web crawlers easily}
   gem.homepage      = "http://github.com/rafaelss/caule"
 
   gem.files         = `git ls-files`.split($\)
