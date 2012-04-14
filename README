@@ -2,6 +2,8 @@
 
 A simple DSL, based on [Anemone](https://rubygems.org/gems/anemone), to build web crawlers easily.
 
+[![Build Status](https://secure.travis-ci.org/rafaelss/caule.png?branch=master)](http://travis-ci.org/rafaelss/caule)
+
 ## Installation
 
 Add this line to your application's Gemfile:
