@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Caule::VERSION
 
   gem.add_dependency "mechanize", "~> 2.3"
+  gem.add_dependency "addressable", "~> 2.2.7"
   gem.add_development_dependency "rspec", "~> 2.9.0"
   gem.add_development_dependency "fivemat", "~> 1.0.0"
   gem.add_development_dependency "webmock", "~> 1.8.6"

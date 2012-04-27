@@ -1,4 +1,5 @@
 require "mechanize"
+require "addressable/uri"
 
 module Caule
   class Bot
