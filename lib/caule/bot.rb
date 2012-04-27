@@ -39,9 +39,13 @@ module Caule
             do_page_blocks(page)
             stack.push(*links_to_follow(page))
           rescue Mechanize::ResponseCodeError => ex
-            puts ex.message.red
+            puts "ERROR ---"
+            puts ex.message
+            puts ex.backtrace
           rescue Mechanize::RedirectLimitReachedError => ex
-            puts ex.message.red
+            puts "ERROR ---"
+            puts ex.message
+            puts ex.backtrace
           end
         end
       end
