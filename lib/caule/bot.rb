@@ -64,13 +64,14 @@ module Caule
 
     def links_to_follow(page)
       if @focus_crawl_block
-        links = @focus_crawl_block.call(page) || []
+        links = []
+        @focus_crawl_block.call(page, links)
         links.compact! unless links.empty?
       else
         links = page.links
       end
 
-      links.select { |link| visit_link?(link) }.map { |link| link.dup }
+      links.select { |link| visit_link?(link) }.uniq { |link| link.href }
     end
 
     def visit_link?(link)
