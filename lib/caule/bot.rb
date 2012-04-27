@@ -39,6 +39,8 @@ module Caule
             stack.push(*links_to_follow(page))
           rescue Mechanize::ResponseCodeError => ex
             puts ex.message.red
+          rescue Mechanize::RedirectLimitReachedError => ex
+            puts ex.message.red
           end
         end
       end
