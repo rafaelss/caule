@@ -75,8 +75,10 @@ module Caule
     end
 
     def visit_link?(link)
-      return false if agent.visited?(link.href)
-      true
+      return false if link.href.to_s =~ /^javascript/
+      return false if link.href.to_s =~ /^#/
+      return false if agent.visited?(link)
+      return true
     end
   end
 end
