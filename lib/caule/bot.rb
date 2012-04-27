@@ -67,7 +67,10 @@ module Caule
       if @focus_crawl_block
         links = []
         @focus_crawl_block.call(page, links)
-        links.compact! unless links.empty?
+        unless links.empty?
+          links.flatten!
+          links.compact!
+        end
       else
         links = page.links
       end

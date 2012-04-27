@@ -41,15 +41,15 @@ describe Caule::Bot do
     describe "focus_crawl" do
       subject { described_class.new("http://sfbay.craigslist.org/") }
 
-      it "crawls only links returned by the block" do
+      it "crawls only links pushed in links parameter" do
         stub_request(:get, "http://sfbay.craigslist.org/").
           to_return(:status => 200, :body => "<a href='/about'>about</a><a href='/forums'></a>", :headers => { "Content-Type" => "text/html" })
 
         stub_request(:get, "http://sfbay.craigslist.org/forums").
           to_return(:status => 200, :body => "", :headers => { "Content-Type" => "text/html" })
 
-        subject.focus_crawl do |page|
-          page.links_with(:href => /forums$/)
+        subject.focus_crawl do |page, links|
+          links.push(*page.links_with(:href => /forums$/))
         end
 
         subject.run
